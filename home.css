@@ -1,0 +1,21 @@
+header{
+    font-size: 60px;
+}
+
+header img{
+}
+
+.right-slide{
+    position: absolute;
+    right: 0;
+}
+
+.right-slide:nth-child(1),.right-slide:nth-child(3){
+    width: 10vw;
+    position: absolute;
+}
+
+.right-slide:nth-child(2){
+    width: 20vw;
+    position: absolute;
+}

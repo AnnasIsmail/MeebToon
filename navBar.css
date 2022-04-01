@@ -1,0 +1,77 @@
+
+nav{
+    background: rgba(255, 91, 75, 0.23);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+    vertical-align: text-bottom;
+    height: 80px;
+    gap: 20%;
+    position: fixed;
+}
+
+nav img{
+    padding-top: 5%;
+    height: 90%;
+    transition: height 0.5s, margin 0.5s;
+}
+
+nav img:hover{
+    height: 130%;
+    margin-left: -10px;
+    cursor: pointer;
+}
+
+nav div{
+    height: 100%;
+    display: flex;
+}
+
+nav span{
+    padding:  30px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgba(255, 91, 75, 1);
+}
+
+nav span:hover{
+    color: rgb(151, 57, 49);
+    cursor: pointer;
+}
+
+.categ{
+    display: flex;
+    vertical-align: baseline;
+}
+
+.panah-bawah {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid rgba(255, 91, 75, 1);
+    margin-top: 6px;
+}
+
+.drop-down{
+    position: absolute;
+    display: none;
+    text-align: center;
+    margin-top: 85px;
+    margin-left: 500px;
+    background: rgba(255, 91, 75, 0.23);
+    height: auto;
+    border-radius: 5px;
+}
+
+.drop-down span{
+    padding: 10px;
+    box-shadow: none;
+}
+
+.ganjelan{
+    padding-top: 80px;
+}
