@@ -37,15 +37,19 @@
     <header>
         <span class="left-slide"><</span>
         <span class="slide-photo">
-            <img src="https://cn.e.pic.mangatoon.mobi/homepage-banners/526-12a4.jpg" alt="">
-            <img src="https://cn.e.pic.mangatoon.mobi/homepage-banners/226-2f65.jpg" alt="">
-            <img src="https://cn.e.pic.mangatoon.mobi/editor-upload/d6fed28e96315aac7ab1d5128317f4b7.jpg" alt="">
+            <img id="photoSlider" src="https://cn.e.pic.mangatoon.mobi/editor-upload/d6fed28e96315aac7ab1d5128317f4b7.jpg" alt="">
         </span>
+        <div class="parent-titik">
+            <span class="titik"></span>
+            <span class="titik-lebar"></span>
+        </div>
         <span class="right-slide">></span>
     </header>
 
     <script>
     $(document).ready(function(){
+
+        
         $(".categ").hover(function(){
             $(".panah-bawah").css("border-top", "8px solid rgb(151, 57, 49)");
         }, function(){
@@ -56,11 +60,25 @@
             $(".drop-down").fadeToggle("slow")
         });
         
-        $(".right-slide").click(function(){
-            $(".slide-photo img:nth-child(1)")
-            .animate({'right': "-=20vw"})
-            .animate({width: "0vw"}, 1000)
-        })
+        let indexPhotoSlider = 1;
+
+        let sourcePhotoSlider = [
+            'https://cn.e.pic.mangatoon.mobi/editor-upload/d6fed28e96315aac7ab1d5128317f4b7.jpg',
+            'https://cn.e.pic.mangatoon.mobi/homepage-banners/526-12a4.jpg',
+            'https://cn.e.pic.mangatoon.mobi/homepage-banners/226-2f65.jpg',
+            'https://cn.e.pic.mangatoon.mobi/editor-upload/5ae3ddc9d4c821f53e9065431350136e.jpg',
+            'https://cn.e.pic.mangatoon.mobi/homepage-banners/129-3f21.jpg',
+            'https://cn.e.pic.mangatoon.mobi/homepage-banners/622-b6b5.jpg'
+        ]
+
+        setInterval(function(){
+            document.getElementById('photoSlider').setAttribute('src', sourcePhotoSlider[indexPhotoSlider]);
+            if(sourcePhotoSlider.length == indexPhotoSlider+1){
+                indexPhotoSlider = 0; 
+            }else{
+                indexPhotoSlider++;
+            }
+        }, 1500);
     });
     </script>
 </body>

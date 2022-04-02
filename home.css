@@ -1,15 +1,52 @@
 header{
-    font-size: 60px;
+    font-size: 70px;
+    color: rgba(204, 204, 204, 1);
+    text-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 5% 45% 5%;
+    justify-content: center;
+    column-gap: 3%;
+    margin-top: 20px;
 }
 
-
-.right-slide{
-    position: absolute;
-    right: 0;
+.slide-photo img{
+    width: 100%;
+    border-radius: 5px;
 }
 
-.slide-photo img:nth-child(odd){
-    width: 10vw;
-    display: none;
-    position: absolute;
+.left-slide:hover, .right-slide:hover{
+    cursor: pointer;
+    color: rgb(58, 58, 58);
+}
+
+.left-slide::selection, .right-slide::selection{
+    background-color: white;
+}
+
+.parent-titik{
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.titik{
+    background-color: rgba(204, 204, 204, 1);
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;   
+}
+
+.titik-lebar{
+    background-color: rgba(255, 91, 75, 1);
+    height: 10px;
+    width: 25px;
+    border-radius: 100px;   
+}
+
+.titik:hover, .titik-lebar:hover{
+    cursor: pointer;
+    background-color: rgb(142, 54, 46);
 }
