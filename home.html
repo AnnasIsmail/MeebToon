@@ -36,8 +36,7 @@
 
     <header>
         <span class="left-slide"><</span>
-        <span class="slide-photo">
-            <img id="photoSlider" src="https://cn.e.pic.mangatoon.mobi/editor-upload/d6fed28e96315aac7ab1d5128317f4b7.jpg" alt="">
+        <span class="slide-photo" id="parentPhotoSlider">
         </span>
         <div class="parent-titik">
             <span class="titik"></span>
@@ -60,25 +59,45 @@
             $(".drop-down").fadeToggle("slow")
         });
         
-        let indexPhotoSlider = 1;
+        let indexPhotoSlider = 0;
 
         let sourcePhotoSlider = [
-            'https://cn.e.pic.mangatoon.mobi/editor-upload/d6fed28e96315aac7ab1d5128317f4b7.jpg',
-            'https://cn.e.pic.mangatoon.mobi/homepage-banners/526-12a4.jpg',
-            'https://cn.e.pic.mangatoon.mobi/homepage-banners/226-2f65.jpg',
-            'https://cn.e.pic.mangatoon.mobi/editor-upload/5ae3ddc9d4c821f53e9065431350136e.jpg',
-            'https://cn.e.pic.mangatoon.mobi/homepage-banners/129-3f21.jpg',
-            'https://cn.e.pic.mangatoon.mobi/homepage-banners/622-b6b5.jpg'
+            'assets/gambarWibu1.jpg',
+            'assets/gambarWibu2.jpg',
+            'assets/gambarWibu3.jpg',
+            'assets/gambarWibu4.jpg',
+            'assets/gambarWibu5.jpg',
+            'assets/gambarWibu6.jpg'
         ]
 
+        sourcePhotoSlider.forEach((src, index) => {
+            let image = document.createElement('img');
+            image.setAttribute('src', src);
+            image.setAttribute('id', `imageSlidePhoto${index}`);
+            if(index == 0){
+                image.setAttribute('class', 'displayInline');
+            }else{
+                image.setAttribute('class', 'displayNone');
+            }
+            document.getElementById('parentPhotoSlider').appendChild(image);
+        });
+
         setInterval(function(){
-            document.getElementById('photoSlider').setAttribute('src', sourcePhotoSlider[indexPhotoSlider]);
-            if(sourcePhotoSlider.length == indexPhotoSlider+1){
-                indexPhotoSlider = 0; 
+            console.log('sebelum')
+            setTimeout(() => {
+            console.log('didalam')
+            $('#imageSlidePhoto'+indexPhotoSlider).css('display', 'inline');
+            $('#imageSlidePhoto'+indexPhotoSlider).addClass('slide-kanan');
+            $(`#imageSlidePhoto${(indexPhotoSlider == 0)?5:indexPhotoSlider-1}`).addClass('slide-kiri');
+                $(`#imageSlidePhoto${(indexPhotoSlider == 0)?5:indexPhotoSlider-1}`).css('display', 'none');
+            }, 1000);
+            console.log('setelah')
+            if(indexPhotoSlider == sourcePhotoSlider.length-1){
+                indexPhotoSlider = 0;
             }else{
                 indexPhotoSlider++;
             }
-        }, 1500);
+        }, 3000);
     });
     </script>
 </body>

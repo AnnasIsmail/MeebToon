@@ -4,15 +4,42 @@ header{
     text-align: center;
     align-items: center;
     display: grid;
-    grid-template-columns: 5% 45% 5%;
+    grid-template-columns: 25% 45% 25%;
     justify-content: center;
     column-gap: 3%;
     margin-top: 20px;
+    max-width: 100vw;
+    width: 100%;
 }
 
 .slide-photo img{
     width: 100%;
     border-radius: 5px;
+    z-index: -1;
+}  
+
+.displayNone{
+    display: none;
+}
+
+.displayInline{
+    display: inline;
+}
+
+.left-slide , .right-slide {
+    background-color: white;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    z-index: 10;
+}
+
+.left-slide{
+    justify-content: end;
+}
+
+.right-slide{
+    justify-content: start;
 }
 
 .left-slide:hover, .right-slide:hover{
@@ -49,4 +76,37 @@ header{
 .titik:hover, .titik-lebar:hover{
     cursor: pointer;
     background-color: rgb(142, 54, 46);
+}
+
+.slide-kanan{
+    animation: slideKanan 1s alternate 1  forwards;
+    animation-timing-function: ease;
+    margin-right: -220%;
+}
+
+.slide-kiri{
+    animation: slideKiri 1s alternate 1  forwards;
+    animation-timing-function: ease;
+}
+
+.delay{
+    animation-delay: 1s;
+}
+
+@keyframes slideKanan {
+    0%{
+        margin-right: -220%;
+    }
+    100%{
+        margin-right: 0;    
+    }
+}
+
+@keyframes slideKiri {
+    0%{
+        margin-left: 0;    
+    }
+    100%{
+        margin-left: -220%;
+    }
 }
