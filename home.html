@@ -82,22 +82,16 @@
             document.getElementById('parentPhotoSlider').appendChild(image);
         });
 
-        setInterval(function(){
-            console.log('sebelum')
-            setTimeout(() => {
-            console.log('didalam')
-            $('#imageSlidePhoto'+indexPhotoSlider).css('display', 'inline');
-            $('#imageSlidePhoto'+indexPhotoSlider).addClass('slide-kanan');
-            $(`#imageSlidePhoto${(indexPhotoSlider == 0)?5:indexPhotoSlider-1}`).addClass('slide-kiri');
-                $(`#imageSlidePhoto${(indexPhotoSlider == 0)?5:indexPhotoSlider-1}`).css('display', 'none');
-            }, 1000);
-            console.log('setelah')
+        function geserPhotoSlide(){
+
             if(indexPhotoSlider == sourcePhotoSlider.length-1){
                 indexPhotoSlider = 0;
             }else{
                 indexPhotoSlider++;
             }
-        }, 3000);
+        }
+        geserPhotoSlide();
+
     });
     </script>
 </body>
