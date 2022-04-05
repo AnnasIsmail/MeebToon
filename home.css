@@ -7,9 +7,17 @@ header{
     grid-template-columns: 25% 45% 25%;
     justify-content: center;
     column-gap: 3%;
+    row-gap: 3%;
     margin-top: 20px;
     max-width: 100vw;
     width: 100%;
+}
+
+.slide-photo{
+    display: grid;
+    grid-template-columns: 100% 100%;
+    animation: slideKanan 2s alternate 1  forwards;
+    gap: 7%;
 }
 
 .slide-photo img{
@@ -17,14 +25,6 @@ header{
     border-radius: 5px;
     z-index: -1;
 }  
-
-.displayNone{
-    display: none;
-}
-
-.displayInline{
-    display: inline;
-}
 
 .left-slide , .right-slide {
     background-color: white;
@@ -78,35 +78,3 @@ header{
     background-color: rgb(142, 54, 46);
 }
 
-.slide-kanan{
-    animation: slideKanan 1s alternate 1  forwards;
-    animation-timing-function: ease;
-    margin-right: -220%;
-}
-
-.slide-kiri{
-    animation: slideKiri 1s alternate 1  forwards;
-    animation-timing-function: ease;
-}
-
-.delay{
-    animation-delay: 1s;
-}
-
-@keyframes slideKanan {
-    0%{
-        margin-right: -220%;
-    }
-    100%{
-        margin-right: 0;    
-    }
-}
-
-@keyframes slideKiri {
-    0%{
-        margin-left: 0;    
-    }
-    100%{
-        margin-left: -220%;
-    }
-}

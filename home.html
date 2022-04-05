@@ -68,31 +68,51 @@
             'assets/gambarWibu4.jpg',
             'assets/gambarWibu5.jpg',
             'assets/gambarWibu6.jpg'
-        ]
+        ];
 
-        sourcePhotoSlider.forEach((src, index) => {
+        function renderImageSlider(index){
+            src = sourcePhotoSlider[index]
             let image = document.createElement('img');
             image.setAttribute('src', src);
             image.setAttribute('id', `imageSlidePhoto${index}`);
-            if(index == 0){
-                image.setAttribute('class', 'displayInline');
-            }else{
-                image.setAttribute('class', 'displayNone');
-            }
+            image.setAttribute('style', 'display: inline');
             document.getElementById('parentPhotoSlider').appendChild(image);
-        });
-
-        function geserPhotoSlide(){
-
+        }
+        
+        function nextIndexPhotoSlide(){
+            let nextIndex = `${(indexPhotoSlider == sourcePhotoSlider.length-1)?0 :indexPhotoSlider+1}`;
+            renderImageSlider(nextIndex);
+            
+            $(`#imageSlidePhoto${indexPhotoSlider}`).animate({'margin-left':'-107%'},1000, function(){
+                $(this).remove();
+            });
+            $(`#imageSlidePhoto${nextIndex}`).animate({'margin-left':'-107%'},1000, function(){
+                $(this).css('margin-left', '0');
+            });
             if(indexPhotoSlider == sourcePhotoSlider.length-1){
                 indexPhotoSlider = 0;
             }else{
                 indexPhotoSlider++;
             }
         }
-        geserPhotoSlide();
 
+        renderImageSlider(indexPhotoSlider);
+        nextIndexPhotoSlide();
+        
+        let intervalSlider = setInterval(()=> nextIndexPhotoSlide(), 3000);
+
+        $('.left-slide').click(()=>{
+            clearInterval(intervalSlider);
+        })
+
+        $('.right-slide').click(function(){
+            var a = $('.photo-slide');
+            a.animate(nextIndexPhotoSlide(), 1000);
+
+        });
     });
+
+    
     </script>
 </body>
 </html>
