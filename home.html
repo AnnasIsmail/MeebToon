@@ -74,6 +74,7 @@
             src = sourcePhotoSlider[index]
             let image = document.createElement('img');
             image.setAttribute('src', src);
+            image.setAttribute('class', 'img-photo-slider')
             image.setAttribute('id', `imageSlidePhoto${index}`);
             image.setAttribute('style', 'display: inline');
             document.getElementById('parentPhotoSlider').appendChild(image);
@@ -106,8 +107,9 @@
         })
 
         $('.right-slide').click(function(){
-            var a = $('.photo-slide');
-            a.animate(nextIndexPhotoSlide(), 1000);
+            var a = $('.img-photo-slider');
+            a.animate({'height' : '0%'}, 1000);
+            a.animate({'height' : '100%'}, 1000);
 
         });
     });
