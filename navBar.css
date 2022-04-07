@@ -1,5 +1,6 @@
 body{
     overflow-x: hidden;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 nav{
@@ -44,8 +45,46 @@ nav span{
 }
 
 nav span:hover{
-    color: rgb(151, 57, 49);
+    color: rgb(90, 34, 29);
     cursor: pointer;
+    animation: hoverSpan 1s;
+}
+
+@keyframes hoverSpan{
+    from{
+    color: rgba(255, 91, 75, 1);
+    }
+    to{
+        color: rgb(90, 34, 29);
+    }
+}
+
+.kelasPanahBawahHover{
+    animation: kelasSaatHover 1s;
+    border-top: 8px solid rgb(90, 34, 29);
+}
+
+@keyframes kelasSaatHover {
+    from{
+        border-top: 8px solid rgba(255, 91, 75, 1);
+    }
+    to{
+        border-top: 8px solid rgb(90, 34, 29);
+    }
+}
+
+.kelasPanahBawah{
+    border-top: 8px solid rgba(255, 91, 75, 1);
+    animation: KelasTanpaHover 1s;
+}
+
+@keyframes KelasTanpaHover {
+    from{
+        border-top: 8px solid rgb(90, 34, 29);
+    }
+    to{
+        border-top: 8px solid rgba(255, 91, 75, 1);
+    }
 }
 
 .categ{
@@ -56,9 +95,12 @@ nav span:hover{
 .panah-bawah {
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-top: 8px solid rgba(255, 91, 75, 1);
     margin-top: 6px;
 }
+
+.panah-bawah-warna{
+    border-top: 8px solid rgba(255, 91, 75, 1);
+} 
 
 .drop-down{
     position: absolute;
