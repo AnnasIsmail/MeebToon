@@ -38,11 +38,9 @@
         <span class="left-slide"><</span>
         <span class="slide-photo" id="parentPhotoSlider">
         </span>
-        <div class="parent-titik">
-            <span class="titik"></span>
-            <span class="titik-lebar"></span>
+        <div class="parent-titik" id="parentTitik">
         </div>
-        <span class="right-slide">></span>
+        <span class="right-slide" >></span>
     </header>
 
     <script>
@@ -70,6 +68,17 @@
             'assets/gambarWibu6.jpg'
         ];
 
+        sourcePhotoSlider.forEach((src, index)=>{
+            const parentTitik = document.getElementById("parentTitik");
+
+            let titik = document.createElement('span');
+            titik.setAttribute('id', `titik${index}`);
+            titik.setAttribute('class', 'titik');
+            parentTitik.appendChild(titik);
+            
+            $(`#titik${index}`).click(()=>klikTitik(index));
+        });
+
         function renderImageSlider(index){
             src = sourcePhotoSlider[index]
             let image = document.createElement('img');
@@ -80,10 +89,33 @@
             document.getElementById('parentPhotoSlider').appendChild(image);
         }
         
+        function changeClassTitik(beforeIndex, nextIndex){
+            $(`#titik${beforeIndex}`).removeClass('titik-lebar');
+            $(`#titik${beforeIndex}`).addClass('titik');
+            $(`#titik${nextIndex}`).removeClass('titik');
+            $(`#titik${nextIndex}`).addClass('titik-lebar');
+        }
+
+        function klikTitik(index){
+            if(indexPhotoSlider < index){
+                clearInterval(intervalSlider);
+                nextIndexPhotoSlideChoose(index);
+                intervalSlider = setInterval(()=> nextIndexPhotoSlide(), 3000);
+            }else if(indexPhotoSlider > index){
+                clearInterval(intervalSlider);
+                prevIndexPhotoSlideChoose(index);
+                intervalSlider = setInterval(()=> nextIndexPhotoSlide(), 3000);
+            }else if(indexPhotoSlider == index){
+                
+            }
+            indexPhotoSlider = index;
+        }
+
         function nextIndexPhotoSlide(){
             let nextIndex = `${(indexPhotoSlider == sourcePhotoSlider.length-1)?0 :indexPhotoSlider+1}`;
             renderImageSlider(nextIndex);
-            
+            changeClassTitik(indexPhotoSlider, nextIndex);
+
             $(`#imageSlidePhoto${indexPhotoSlider}`).animate({'margin-left':'-107%'},1000, function(){
                 $(this).remove();
             });
@@ -97,21 +129,47 @@
             }
         }
 
+        function nextIndexPhotoSlideChoose(index){
+            console.log('masuk')
+            let nextIndex = index;
+            renderImageSlider(nextIndex);
+            changeClassTitik(indexPhotoSlider, nextIndex);
+            
+            $(`#imageSlidePhoto${indexPhotoSlider}`).animate({'margin-left':'-107%'},1000, function(){
+                $(this).remove();
+            });
+            $(`#imageSlidePhoto${nextIndex}`).animate({'margin-left':'-107%'},1000, function(){
+                $(this).css('margin-left', '0');
+            });
+            indexPhotoSlider = 5;
+        }
+
+        function prevIndexPhotoSlideChoose(index){
+            let prevIndex = index;
+            changeClassTitik(indexPhotoSlider, prevIndex);
+
+            $(`#imageSlidePhoto${indexPhotoSlider}`).remove();
+
+            renderImageSlider(prevIndex);
+            renderImageSlider(indexPhotoSlider);
+
+            $(`#imageSlidePhoto${indexPhotoSlider}`).css('margin-left', '-108%');
+            $(`#imageSlidePhoto${prevIndex}`).css('margin-left', '-107%');
+            
+            $(`#imageSlidePhoto${indexPhotoSlider}`).animate({'margin-left':'+0%'},1000, function(){
+            $(this).remove();
+            }); 
+            $(`#imageSlidePhoto${prevIndex}`).animate({'margin-left':'0'},1000, function(){
+                $(this).css('margin-left', '0');
+            });
+            indexPhotoSlider = 5;
+        }
         renderImageSlider(indexPhotoSlider);
-        nextIndexPhotoSlide();
-        
+        $(`#titik${indexPhotoSlider}`).removeClass('titik');
+        $(`#titik${indexPhotoSlider}`).addClass('titik-lebar');
+
         let intervalSlider = setInterval(()=> nextIndexPhotoSlide(), 3000);
 
-        $('.left-slide').click(()=>{
-            clearInterval(intervalSlider);
-        })
-
-        $('.right-slide').click(function(){
-            var a = $('.img-photo-slider');
-            a.animate({'height' : '0%'}, 1000);
-            a.animate({'height' : '100%'}, 1000);
-
-        });
     });
 
     

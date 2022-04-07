@@ -42,7 +42,7 @@ header{
     justify-content: start;
 }
 
-.left-slide:hover, .right-slide:hover{
+.left-slide:hover, .right-slide:hover, .titik:hover{
     cursor: pointer;
     color: rgb(58, 58, 58);
 }
@@ -75,6 +75,6 @@ header{
 
 .titik:hover, .titik-lebar:hover{
     cursor: pointer;
-    background-color: rgb(142, 54, 46);
+    background-color: rgb(58, 58, 58);
 }
 
