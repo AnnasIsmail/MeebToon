@@ -294,13 +294,19 @@ border-radius: 10px;
 .category .container-category div{
     margin: 20px 0 0 20px;
     display: flex;
+    width: 100%;
     gap: 20px;
 }
 
 .category .container-category div h1{
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22.5px;
+    font-weight: bolder;
     color: #4C1510;
+    width: auto;
+}
+
+.category .container-category div h1{
+    cursor: pointer;
 }
 
 .category .list-comics{
