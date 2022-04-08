@@ -37,7 +37,8 @@ nav div{
 }
 
 nav span{
-    padding:  30px 20px;
+    margin:  30px 20px;
+    padding-bottom: 25px;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
@@ -113,11 +114,21 @@ nav span:hover{
     border-radius: 5px;
 }
 
-.drop-down span{
+.right .drop-down span{
     padding: 10px;
     box-shadow: none;
+    margin: 0;
 }
 
 .ganjelan{
     padding-top: 80px;
+}
+
+.on-page{
+    border-bottom: solid 3px rgb(90, 34, 29);
+    color: rgb(90, 34, 29);
+}
+
+.on-page:hover{
+    animation: none;
 }

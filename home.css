@@ -278,8 +278,6 @@ border-radius: 10px;
 }
 
 /* CATEGORY */
-
-
 .category .container-category{
     margin-top: 20px;
     display: grid;
@@ -305,7 +303,7 @@ border-radius: 10px;
     width: auto;
 }
 
-.category .container-category div h1{
+.category .container-category div h1:hover{
     cursor: pointer;
 }
 
@@ -341,4 +339,10 @@ border-radius: 10px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap; 
+}
+
+.on-click{
+    border-bottom: 3px black solid;
+    padding-bottom: 5px;
+    color: black !important;
 }
