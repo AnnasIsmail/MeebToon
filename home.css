@@ -142,7 +142,7 @@ border-radius: 10px;
     font-weight: bold;
 }
 
-.hottest-comics .preview-comics .detail-comics .parrent-view-and-like{
+.hottest-comics .preview-comics .detail-comics .parent-view-and-like{
     display: grid;
     grid-template-columns: auto auto;
     padding: 10px;
@@ -167,7 +167,7 @@ border-radius: 10px;
     font-size: 17px;
 }
 
-.hottest-comics .preview-comics .detail-comics .parrent-button{
+.hottest-comics .preview-comics .detail-comics .parent-button{
     display: grid;
     grid-template-columns: auto auto auto;
     column-gap: 10px;
@@ -192,53 +192,53 @@ border-radius: 10px;
     background: rgba(103, 27, 20, 0.6);
 }
 
-.hottest-comics .preview-comics .detail-comics .parrent-comment h1{
+.hottest-comics .preview-comics .detail-comics .parent-comment h1{
     margin-top: 20px;
     font-size: 30px;
     font-weight: bold;
 }
 
-.hottest-comics .preview-comics .detail-comics .parrent-comment .header-comment{
+.hottest-comics .preview-comics .detail-comics .parent-comment .header-comment{
     padding-bottom: 10px;
     border-bottom: rgba(76, 21, 16, 0.7) 1px solid;
 }
 
-.hottest-comics .preview-comics .detail-comics .parrent-comment .container-comment{
+.hottest-comics .preview-comics .detail-comics .parent-comment .container-comment{
     display: grid;
     row-gap: 10px;
 }
 
-.hottest-comics .preview-comics .detail-comics .parrent-comment .comment{
+.hottest-comics .preview-comics .detail-comics .parent-comment .comment{
     display: grid;
     grid-template-columns: 8% auto;
     column-gap: 20px;
     align-items: center;
 }
 
-.hottest-comics .preview-comics .detail-comics .parrent-comment .comment img{
+.hottest-comics .preview-comics .detail-comics .parent-comment .comment img{
     border-radius: 50%;
     width: 100%;
 }
 
-.hottest-comics .preview-comics .detail-comics .parrent-comment .comment span{
+.hottest-comics .preview-comics .detail-comics .parent-comment .comment span{
     display: grid;
     align-self: stretch;
     border-bottom: rgba(76, 21, 16, 0.7) 1px solid;
 }
 
-.hottest-comics .preview-comics .detail-comics .parrent-comment .comment  h1{
+.hottest-comics .preview-comics .detail-comics .parent-comment .comment  h1{
     margin: 0;
     font-size: 22px;
     font-weight: bold;
 }
 
-.hottest-comics .preview-comics .detail-comics .parrent-comment .container-comment .see-all-comment{
+.hottest-comics .preview-comics .detail-comics .parent-comment .container-comment .see-all-comment{
     text-align: center;
     font-size: 20px;
     font-weight: bold;
 }  
 
-.hottest-comics .preview-comics .detail-comics .parrent-comment .container-comment .see-all-comment:hover{
+.hottest-comics .preview-comics .detail-comics .parent-comment .container-comment .see-all-comment:hover{
     cursor: pointer;
 }
 
