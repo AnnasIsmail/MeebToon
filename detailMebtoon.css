@@ -19,6 +19,8 @@ main{
     backdrop-filter: blur(8.9px);
     -webkit-backdrop-filter: blur(8.9px);
     border: 1px solid rgba(255, 91, 75, 0.48);
+    box-shadow: 0px 4px 10px #888888;
+    color: #4C1510;
 }
 
 .detail-comic img{
@@ -39,16 +41,16 @@ main{
 
 .detail-comic .view , .detail-comic .like{
     display: grid;
-    grid-template-columns: 42% 10%;
+    grid-template-columns: 25% 10%;
     height: 40px;
     width: 120px;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 5px;
     font-size: 20px;
 }
 
 .detail-comic .like{
-    grid-template-columns: 39% 10%;
+    grid-template-columns: 21% 10%;
 }
 
 .detail-comic p{
@@ -79,6 +81,7 @@ main{
     backdrop-filter: blur(8.9px);
     -webkit-backdrop-filter: blur(8.9px);
     border: 1px solid rgba(232, 55, 39, 0.48);
+    box-shadow: 0px 2px 5px #515151;
     color: white;
 }
 
@@ -89,19 +92,73 @@ main{
 
 .episode-comment .parent-header{
     display: flex;
-    width: 100%;
+    width: 100%-40px;
     justify-content: space-evenly;
     padding: 20px;
 }
 
+.episode-comment hr{
+    border-bottom: solid 2px rgba(232, 55, 39, 0.6);
+    width: 97%;
+    margin: auto;
+}
+
 .parent-header .on-click{
     color: rgba(232, 55, 39, 1);
-    border-bottom: solid 3px rgba(232, 55, 39, 1);
+    border-bottom: solid 2.5px rgba(232, 55, 39, 1);
     font-weight: bold;
 }
 
-.episode-comment h1{
+.episode-comment .parent-header h1{
     color: rgba(232, 55, 39, 0.6);
     font-size: 30px;
     padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.parent-episode{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    padding: 15px;
+}
+
+.parent-episode div{
+    background: rgba(255, 91, 75, 0.52);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.9px);
+    -webkit-backdrop-filter: blur(8.9px);
+    border: 1px solid rgba(255, 91, 75, 0.48);
+    box-shadow: 0px 4px 10px #888888;
+    color: #4C1510;
+    row-gap: 3px;
+    padding: 10px;
+    display: grid;
+}
+
+.parent-episode div:hover{
+    background: rgb(227, 94, 79);
+    cursor: pointer;
+}
+
+.parent-episode div h1{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.parent-episode div .parent-like-comment{
+    display: flex;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.parent-episode div .parent-like-comment span{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+.parent-episode div .parent-like-comment img{
+    width: 20px;
+    padding-right: 5px;
 }

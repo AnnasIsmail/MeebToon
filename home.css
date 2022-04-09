@@ -150,7 +150,7 @@ border-radius: 10px;
 
 .hottest-comics .preview-comics .detail-comics .view ,.hottest-comics .preview-comics .detail-comics .like{
     display: grid;
-    grid-template-columns: 42% 10%;
+    grid-template-columns: 25% 10%;
     height: 40px;
     width: 120px;
     align-items: center;
@@ -159,7 +159,7 @@ border-radius: 10px;
 }
 
 .hottest-comics .preview-comics .detail-comics .like{
-    grid-template-columns: 39% 10%;
+    grid-template-columns: 21% 10%;
 }
 
 .hottest-comics .preview-comics .detail-comics .desc{
