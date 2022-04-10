@@ -162,3 +162,49 @@ main{
     width: 20px;
     padding-right: 5px;
 }
+
+
+/* RECOMENDED FOR YOU */
+.recomended-for-you{
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.recomended-for-you .header{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.list-comics{
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    justify-content: space-evenly;
+    padding-top: 15px;
+}
+
+.list-comics .comic{
+    display: grid;
+    row-gap: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 17px;
+    color: #ff5b4b;
+    font-weight: bold;
+}
+
+.list-comics .comic:hover{
+    cursor: pointer;
+}
+
+.list-comics .comic img{
+    border-radius: 5px;
+    width: 100%;
+}
+
+.list-comics .comic h1{
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
+}
