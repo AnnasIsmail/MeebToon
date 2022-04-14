@@ -23,6 +23,7 @@ main .category-comic{
     padding: 10px 20px;
     overflow: hidden;
     overflow-x: auto;
+    box-sizing: border-box;
 }
 
 main .category-comic::-webkit-scrollbar {
@@ -64,4 +65,53 @@ main .category-comic span .on-click{
     background-color: rgba(255, 255, 255,0.5);
     padding: 2px 10px;
     border-radius: 10px;
+}
+
+.list-comics .comic .like{
+    display: grid;
+    height: 20px;
+    width: 120px;
+    column-gap: 5px;
+    font-size: 18px;
+    grid-template-columns: 19% 10%;
+    font-weight: 400;
+}
+
+.list-comics{
+    background: rgba(255, 91, 75, 0.52);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.9px);
+    -webkit-backdrop-filter: blur(8.9px);
+    border: 1px solid rgba(255, 91, 75, 0.48);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.list-comics .comic{
+    display: grid;
+    row-gap: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 17px;
+    color: #4C1510;
+    text-align: left;
+    font-weight: bold;
+}
+
+.list-comics .comic:hover{
+    cursor: pointer;
+}
+
+.list-comics .comic img{
+    border-radius: 5px;
+    width: 100%;
+}
+
+.list-comics .comic h1{
+    width: 100%;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
 }
