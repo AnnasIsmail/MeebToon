@@ -298,9 +298,17 @@ border-radius: 10px;
 
 .category .container-category div h1{
     font-size: 22.5px;
-    font-weight: bolder;
+    font-weight: 300;
     color: #4C1510;
     width: auto;
+}
+
+
+.category .container-category div .on-click{
+    font-weight: bolder;
+    border-bottom: 3px black solid;
+    padding-bottom: 5px;
+    color: black !important;
 }
 
 .category .container-category div h1:hover{
@@ -339,10 +347,4 @@ border-radius: 10px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap; 
-}
-
-.on-click{
-    border-bottom: 3px black solid;
-    padding-bottom: 5px;
-    color: black !important;
 }
