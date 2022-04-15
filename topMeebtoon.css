@@ -57,7 +57,13 @@ main .category-comic span h1{
     padding: 2px 10px;
     font-weight: 300;
     width: max-content;
+}
+
+main .category-comic span h1:hover{
+    padding: 0;
+    margin: 0 10px;
     cursor: pointer;
+    border-bottom: 1.5px #4C1510 solid;
 }
 
 main .category-comic span .on-click{
@@ -65,6 +71,13 @@ main .category-comic span .on-click{
     background-color: rgba(255, 255, 255,0.5);
     padding: 2px 10px;
     border-radius: 10px;
+}
+
+main .category-comic span .on-click:hover{
+    padding: 2px 10px;
+    margin: 0;
+    cursor: pointer;
+    border-bottom: none;
 }
 
 .list-comics .comic .like{
@@ -116,9 +129,18 @@ main .category-comic span .on-click{
     white-space: nowrap; 
 }
 
-.recomended-for-you .list-comics{
-
+.recomended-for-you h1{
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    font-size: 35px;
+    text-overflow: ellipsis;
+    font-weight: bold;
+}
 
+.recomended-for-you .list-comics{
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    
+    background: none;
+    box-shadow: none;
+    border: none;
 }
