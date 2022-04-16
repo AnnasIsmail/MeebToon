@@ -1,12 +1,12 @@
 $(document).ready(function(){
 
-    let indexPhotoSlider = 0;
-    let fungsiBerjalan = false;
+    indexPhotoSlider = 0;
+    fungsiBerjalan = false;
 
-    let sourcePhotoSlider = [
+    sourcePhotoSlider = [
         'assets/gambarWibu1.jpg',
-        'assets/gambarWibu2.jpg',
         'assets/gambarWibu3.jpg',
+        'assets/gambarWibu2.jpg',
         'assets/gambarWibu4.jpg',
         'assets/gambarWibu5.jpg',
         'assets/gambarWibu6.jpg'
@@ -18,7 +18,10 @@ $(document).ready(function(){
         let titik = document.createElement('span');
         titik.setAttribute('id', `titik${index}`);
         titik.setAttribute('class', 'titik');
-        parentTitik.appendChild(titik);
+        try {
+            parentTitik.appendChild(titik);
+        } catch (e) {
+        }
         
         $(`#titik${index}`).click(()=>klikTitik(index));
     });
@@ -30,7 +33,11 @@ $(document).ready(function(){
         image.setAttribute('class', 'img-photo-slider')
         image.setAttribute('id', `imageSlidePhoto${index}`);
         image.setAttribute('style', 'display: inline');
-        document.getElementById('parentPhotoSlider').appendChild(image);
+        try {
+            document.getElementById('parentPhotoSlider').appendChild(image);
+        } catch (e) {
+            
+        }
     }
     
     function changeClassTitik(beforeIndex, nextIndex){
@@ -132,7 +139,7 @@ $(document).ready(function(){
     $(`#titik${indexPhotoSlider}`).removeClass('titik');
     $(`#titik${indexPhotoSlider}`).addClass('titik-lebar');
 
-    let intervalSlider = setInterval(()=> nextIndexPhotoSlide(), 3000);
+    intervalSlider = setInterval(()=> nextIndexPhotoSlide(), 3000);
 
     $('.left-slide').click(()=>{
         if(indexPhotoSlider == 0){

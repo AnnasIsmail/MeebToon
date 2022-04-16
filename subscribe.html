@@ -14,9 +14,9 @@
 </head>
 <body>
     <nav>
-        <di class="left">
+        <div class="left">
             <img src="assets/logoOren.png" alt="">
-        </di>
+        </div>
         <div class="right">
             <span class="navbar-home">Home</span>
             <span class="navbar-top-author">Top Author</span>
@@ -65,7 +65,7 @@
 
     <script src="script/list-country.js"></script>
     <script>
-        let selectCountry = document.getElementById('select-country');
+        selectCountry = document.getElementById('select-country');
         listCountry.forEach(name => {
             let option = document.createElement('option');
             option.setAttribute('value', name);

@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-        
     $(".categ").hover(function(){
         $(".panah-bawah").removeClass('kelasPanahBawah');
         $(".panah-bawah").removeClass('panah-bawah-warna');

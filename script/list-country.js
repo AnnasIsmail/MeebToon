@@ -1,4 +1,4 @@
-const listCountry = [
+listCountry = [
     "Afghanistan",
     "Aland Islands",
     "Albania",
@@ -252,4 +252,3 @@ const listCountry = [
     "Zambia",
     "Zimbabwe"
 ];
-
