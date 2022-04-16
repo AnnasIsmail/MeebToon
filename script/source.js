@@ -40,15 +40,18 @@ comic = [
 author = [
     {
         authorId : 'AUT001', 
-        authorName : 'CHINA LITERATURE'   
+        authorName : 'CHINA LITERATURE',
+        from: 'Jakarta, Indonesia'
     },
     {
         authorId : 'AUT002', 
-        authorName : 'GuQiang'   
+        authorName : 'GuQiang',
+        from: 'Kyoto, Jepang'  
     },
     {
         authorId : 'AUT003', 
-        authorName : 'Kuaikan Comics'   
+        authorName : 'Kuaikan Comics',
+        from: 'Beijing, China' 
     },
 ]
 
