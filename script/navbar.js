@@ -18,4 +18,23 @@ $(document).ready(function(){
         }
     });
     
+    $('.navbar-home').click(function(){
+        $('#root').load('home.html');
+    });
+
+    $('.navbar-top-author').click(function(){
+        $('#root').load('topAuthor.html');
+    });
+
+    $('.navbar-top-mebtoon').click(function(){
+        $('#root').load('topMebtoon.html');
+    });
+
+    $('.navbar-subscribe').click(function(){
+        $('#root').load('subscribe.html');
+    });
+
+    $('.navbar-category-show-all').click(function(){
+        $('#root').load('categoryShowAll.html');
+    });
 });
