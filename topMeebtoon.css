@@ -139,7 +139,6 @@ main .category-comic span .on-click:hover{
 .recomended-for-you .list-comics{
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    
     background: none;
     box-shadow: none;
     border: none;

@@ -8,6 +8,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -18,7 +19,7 @@
 
 body{
     overflow-x: hidden;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:Verdana, sans-serif;
 }
 
 nav{
