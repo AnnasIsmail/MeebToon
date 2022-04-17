@@ -246,7 +246,7 @@ border-radius: 10px;
 .hottest-comics .list-comics{
     margin-top: 20px;
     display: grid;
-    grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: space-evenly;
     padding-top: 15px;
 }
@@ -318,7 +318,7 @@ border-radius: 10px;
 .category .list-comics{
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: space-evenly;
     padding-top: 15px;
 }

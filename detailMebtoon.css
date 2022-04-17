@@ -175,7 +175,6 @@ main{
 .list-comics{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: 1row;
     justify-content: space-evenly;
     padding-top: 15px;
 }
