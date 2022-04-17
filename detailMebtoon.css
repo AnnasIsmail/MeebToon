@@ -49,10 +49,6 @@ main{
     font-size: 20px;
 }
 
-.detail-comic .like{
-    grid-template-columns: 21% 10%;
-}
-
 .detail-comic p{
     text-align: justify;
     margin-top: 10px;
@@ -118,7 +114,7 @@ main{
 
 .parent-episode{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
     padding: 15px;
 }
@@ -178,7 +174,8 @@ main{
 
 .list-comics{
     display: grid;
-    grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: 1row;
     justify-content: space-evenly;
     padding-top: 15px;
 }

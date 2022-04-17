@@ -4,3 +4,15 @@ main{
     display: grid;
     row-gap: 30px;
 }
+
+main div{
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+main div span{
+
+}
+

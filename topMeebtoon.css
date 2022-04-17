@@ -80,16 +80,6 @@ main .category-comic span .on-click:hover{
     border-bottom: none;
 }
 
-.list-comics .comic .like{
-    display: grid;
-    height: 20px;
-    width: 120px;
-    column-gap: 5px;
-    font-size: 18px;
-    grid-template-columns: 19% 10%;
-    font-weight: 400;
-}
-
 .list-comics{
     background: rgba(255, 91, 75, 0.52);
     border-radius: 16px;
@@ -114,6 +104,16 @@ main .category-comic span .on-click:hover{
 
 .list-comics .comic:hover{
     cursor: pointer;
+}
+
+.list-comics .comic .like{
+    display: grid;
+    height: 20px;
+    width: 120px;
+    column-gap: 5px;
+    font-size: 18px;
+    grid-template-columns: 19% 10%;
+    font-weight: 400;
 }
 
 .list-comics .comic img{
