@@ -67,9 +67,17 @@ main div .list-comic{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border-radius: 10px;
-
+    border-radius: 5px;
 }
+
+main div .list-comic::-webkit-scrollbar-track {
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: 0;
+}
+
 
 main div .list-comic div{
     background: none;
@@ -81,7 +89,6 @@ main div .list-comic div{
 
     display: flex;
     justify-content: space-evenly;
-    /* min-width: 100%; */
     width: auto;
     margin: 0;
     padding: 20px;
@@ -98,11 +105,19 @@ main div .list-comic div .comic{
     border-radius: 5px;
 }
 
+.list-comic h1{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 5px;
+}
+
 span .like{
     display: grid;
     grid-template-columns: 21px 10%;
     column-gap: 5px;
     font-size: 16px;
     font-weight: bold;
+    margin-top: 5px;
 }
 

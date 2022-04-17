@@ -4,12 +4,12 @@ $(document).ready(function(){
     fungsiBerjalan = false;
 
     sourcePhotoSlider = [
-        'assets/gambarWibu1.jpg',
-        'assets/gambarWibu3.jpg',
-        'assets/gambarWibu2.jpg',
-        'assets/gambarWibu4.jpg',
-        'assets/gambarWibu5.jpg',
-        'assets/gambarWibu6.jpg'
+        'assets/image/gambarWibu1.jpg',
+        'assets/image/gambarWibu3.jpg',
+        'assets/image/gambarWibu2.jpg',
+        'assets/image/gambarWibu4.jpg',
+        'assets/image/gambarWibu5.jpg',
+        'assets/image/gambarWibu6.jpg'
     ];
 
     sourcePhotoSlider.forEach((src, index)=>{

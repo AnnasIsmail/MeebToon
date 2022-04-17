@@ -23,7 +23,7 @@ body{
 }
 
 nav{
-    background: rgba(255, 91, 75, 0.23);
+    background: rgb(255, 255, 255);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
