@@ -156,6 +156,7 @@ border-radius: 10px;
     align-items: center;
     column-gap: 10px;
     font-size: 20px;
+    font-weight: 500;
 }
 
 .hottest-comics .preview-comics .detail-comics .like{
@@ -164,7 +165,8 @@ border-radius: 10px;
 
 .hottest-comics .preview-comics .detail-comics .desc{
     text-align: justify;
-    font-size: 17px;
+    font-size: 19px;
+    font-weight: 500;
 }
 
 .hottest-comics .preview-comics .detail-comics .parent-button{
@@ -213,6 +215,8 @@ border-radius: 10px;
     grid-template-columns: 8% auto;
     column-gap: 20px;
     align-items: center;
+    font-weight: 500;
+    font-size: 17px;
 }
 
 .hottest-comics .preview-comics .detail-comics .parent-comment .comment img{
@@ -279,14 +283,14 @@ border-radius: 10px;
 
 /* CATEGORY */
 .category .container-category{
-    margin-top: 20px;
-    display: grid;
     background: rgba(255, 91, 75, 0.52);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8.9px);
     -webkit-backdrop-filter: blur(8.9px);
     border: 1px solid rgba(255, 91, 75, 0.48);
+    margin-top: 20px;
+    display: grid;
 }
 
 .category .container-category div{
@@ -301,6 +305,7 @@ border-radius: 10px;
     font-weight: 300;
     color: #4C1510;
     width: auto;
+    font-weight: 500;
 }
 
 
