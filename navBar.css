@@ -32,18 +32,26 @@ nav{
     z-index: 100;
     display: flex;
     justify-content: space-around;
-    vertical-align: text-bottom;
+    align-items: center;
     height: 80px;
     gap: 20%;
+    text-align: center;
 }
 
-nav img{
+nav :nth-child(1) img{
     padding-top: 5%;
     height: 90%;
     transition: height 0.5s, margin 0.5s;
 }
 
-nav img:hover{
+nav :nth-child(2) img{
+    padding-top: 5%;
+    height: 90%;
+    cursor: pointer;
+}
+
+
+nav :nth-child(1) img:hover{
     height: 130%;
     margin-left: -10px;
     cursor: pointer;
@@ -142,6 +150,12 @@ nav span:hover{
     margin: 0;
 }
 
+.burger-menu{
+    display: none;
+    cursor: pointer;
+    height: 60px;
+}
+
 .ganjelan{
     padding-top: 80px;
 }
@@ -153,4 +167,66 @@ nav span:hover{
 
 .on-page:hover{
     animation: none;
+}
+
+@media only screen and (max-width: 1050px) {
+    nav .right{
+        background: rgba(255, 217, 213, 0.98);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        
+        height: 100%;
+        width: 100%;
+        top: 80px;
+        display: none;
+        position: absolute;
+        align-items: center;
+    }
+    
+    nav .navbar-top-author , nav .navbar-home , nav .navbar-top-mebtoon  , nav .navbar-subscribe , nav .categ{
+        background: rgba(255, 217, 213, 0.98);
+        /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        margin: 0;
+        padding: 30px 0;
+    }
+
+    .on-page{
+        border: none;
+        background: rgba(195, 166, 163, 0.98) !important;
+    }
+
+    .categ{
+        justify-content: center;
+    }
+
+    nav .drop-down{
+        background: rgba(195, 166, 163, 0.98) !important;
+        position: fixed;
+        margin: auto;
+        width: auto;
+        right: 20px;
+        /* bottom: 0; */
+        top: 55vh;
+        left: 20px;
+    }
+
+    .burger-menu{
+        display:inherit;
+    }
+
+    nav :nth-child(1) img{
+        padding-top: 5%;
+        height: 90%;
+        transition: none;
+    }
+
+    nav :nth-child(1) img:hover{
+        height: 90%;
+        margin-left: 0px;
+        cursor: pointer;
+    }
+
 }
