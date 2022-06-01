@@ -40,9 +40,11 @@ $(document).ready(function(){
     $('#burgerMenu').click(function (){
         const navRight = $('#navRight');
         if(navRight.css('display') == 'grid'){
-            navRight.css('display', 'none')
+            navRight.css('display', 'none');
         }else{
-            navRight.css('display', 'grid')
+            navRight.css('display', 'grid');
         }
     })
+
+
 });
