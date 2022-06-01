@@ -62,6 +62,10 @@ nav div{
     display: flex;
 }
 
+.nav-responsive{
+    display: flex;
+}
+
 nav span{
     margin:  30px 20px;
     padding-bottom: 25px;
@@ -170,6 +174,10 @@ nav span:hover{
 }
 
 @media only screen and (max-width: 1050px) {
+    .nav-responsive{
+        display: none !important;
+    }
+
     nav .right{
         background: rgba(255, 217, 213, 0.98);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -178,8 +186,8 @@ nav span:hover{
         
         height: 100%;
         width: 100%;
+        display: grid;
         top: 80px;
-        display: none;
         position: absolute;
         align-items: center;
     }

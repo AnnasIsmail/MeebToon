@@ -39,10 +39,10 @@ $(document).ready(function(){
 
     $('#burgerMenu').click(function (){
         const navRight = $('#navRight');
-        if(navRight.css('display') == 'grid'){
-            navRight.css('display', 'none');
+        if(navRight.hasClass('nav-responsive') === true){
+            navRight.removeClass('nav-responsive');
         }else{
-            navRight.css('display', 'grid');
+            navRight.addClass('nav-responsive');
         }
     })
 
