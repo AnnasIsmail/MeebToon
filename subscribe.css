@@ -37,6 +37,7 @@ main{
     -webkit-backdrop-filter: blur(8.9px);
     border: 1px solid rgba(232, 55, 39, 0.48);
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 main h1{
@@ -44,6 +45,10 @@ main h1{
     font-weight: bold;
     text-align: center;
     padding: 20px;
+}
+
+main form{
+    display: grid;
 }
 
 main label{
@@ -63,6 +68,26 @@ main span{
     padding: 20px 20px;
     font-size: 20px;
     grid-template-columns: auto auto;
+}
+
+.message-error{
+    background: rgba(185, 41, 41, 0.73);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+    border: 1px solid rgba(185, 41, 41, 1);
+    color: white;
+
+    position: absolute;
+    margin-top: -36px;
+    left: 21%;
+    font-weight: 500;
+    padding: 3px 10px;
+    text-align: center;
+    font-size: 17px;
+    display: none;
+    border-radius: 5px;
 }
 
 .checkbox{
@@ -120,6 +145,12 @@ button:hover{
     main div:nth-child(5){
         grid-template-columns: 30px auto;
         align-items: center;
+    }
+
+    .message-error{
+        margin-top: -6px;
+        left: auto;
+        right: 5%;
     }
 }
 

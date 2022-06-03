@@ -21,6 +21,8 @@ header{
     grid-template-columns: 100% 100%;
     animation: slideKanan 2s alternate 1  forwards;
     gap: 7%;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .slide-photo img{
@@ -30,7 +32,6 @@ header{
 }  
 
 .left-slide , .right-slide {
-    background-color: white;
     height: 100%;
     display: grid;
     align-items: center;
@@ -131,6 +132,12 @@ main div{
 
 .hottest-comics .preview-comics img{
 border-radius: 10px;
+}
+
+.hottest-comics .image-preview{
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
 }
 
 .hottest-comics .preview-comics .detail-comics{

@@ -95,6 +95,11 @@ nav span:hover{
     border-top: 8px solid rgb(90, 34, 29);
 }
 
+.panah-on-page{
+    border-top: 8px solid rgb(90, 34, 29);
+
+}
+
 @keyframes kelasSaatHover {
     from{
         border-top: 8px solid rgba(255, 91, 75, 1);
@@ -134,7 +139,7 @@ nav span:hover{
 } 
 
 .drop-down{
-    background: rgba(255, 217, 213, 0.9);
+    background: #ffd9d5e6;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);

@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="script/photoSlider.js"></script>
     <script src="script/navbar.js"></script>
+    <script src="script/source.js"></script>
+    <title>Mebtoon</title>
 </head>
 <body>
     <nav>
@@ -24,11 +25,11 @@
             <span class="navbar-subscribe" class="on-page">Subscribe</span>
             <span class="categ">Categories<pre> </pre><label class="panah-bawah panah-bawah-warna"></label></span>
                 <div class="drop-down">
-                    <span class="navbar-category-romance">Romance</span>
-                    <span class="navbar-category-fantasy">Fantasy</span>
-                    <span class="navbar-category-chinese-classic">Chinese Classic</span>
-                    <span class="navbar-category-harem">Harem</span>
-                    <span class="navbar-category-action">Action</span>
+                    <span onclick="loadTopMebtoon(1)" >Romance</span>
+                    <span onclick="loadTopMebtoon(2)">Fantasy</span>
+                    <span onclick="loadTopMebtoon(3)">Chinese Classic</span>
+                    <span onclick="loadTopMebtoon(4)">Harem</span>
+                    <span onclick="loadTopMebtoon(5)">Action</span>
                     <span class="navbar-category-show-all">Show All</span>
             </div>
         </div>
@@ -49,15 +50,15 @@
                 <a href="">See All ></a>
             </span>
             <span class="preview-comics">
-                <img class="image-preview" src="assets/image/CMC001.jpg" alt="">
+                <img class="image-preview" alt="" src="">
                 <span class="detail-comics">
-                    <h1>Marry One Get One Free</h1>
-                    <h3>Romance / CEO / Sweet / Cute Baby / One-night Stand / Possessive / Fated</h3>
+                    <h1 class="header-preview"></h1>
+                    <h3 class="category-preview"></h3>
                     <span class="parent-view-and-like">
-                        <span class="view"><img class="image" src="assets/image/View.svg" alt="">12.3k</span>
-                        <span class="like"><img src="assets/image/Favorite.svg" alt="">110.5k</span>
+                        <span class="view"><img class="image" src="assets/image/View.svg" alt=""><p class="preview-view"></p></span>
+                        <span class="like"><img src="assets/image/Favorite.svg" alt=""><p class="preview-like"></p></span>
                     </span>
-                    <p class="desc">Is it you who slept with me and run away six years ago?!" Gan Yuan never expected she would ever meet this man again. Now her one-night stand has become a real trouble. This bossy president becomes her VIP client and she has to serve him as he wants! It seems that Gan Yuan could do nothing but to obey him. "And your child looks just like me." "Can you leave me alone, president!" "No, I want one more child... with you." MangaToon got authorization from CHINA LITERATURE to publish this content, the content is the author's own point of view, and does not represent the stand of MangaToon.</p>
+                    <p class="desc preview-desc"></p>
                     <span class="parent-button">
                         <button>Subscribe</button>
                         <button>Detail Comic</button>
@@ -70,14 +71,14 @@
                             <span class="comment">
                                 <img src="assets/image/photo-profile-1.jpg" alt="">
                                 <span>
-                                    <h1>Santo Siwibu</h1>
+                                    <h1>Joko Wanto</h1>
                                     <p>the cat out the bag he looks just like his father i wonder how long she can hide it fromm him.</p>                            
                                 </span>
                             </span>
                             <span class="comment">
                                 <img src="assets/image/photo-profile-1.jpg" alt="">
                                 <span>
-                                    <h1>Santo Siwibu</h1>
+                                    <h1>Santo Kung</h1>
                                     <p>the cat out the bag he looks just like his father i wonder how long she can hide it fromm him.</p>                            
                                 </span>
                             </span>
@@ -86,31 +87,8 @@
                     </span>
                 </span>
             </span>
-            <span class="list-comics">
-                <span class="comic">
-                    <img src="assets/image/CMC001.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
-                <span class="comic">
-                    <img src="assets/image/CMC002.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
-                <span class="comic">
-                    <img src="assets/image/CMC003.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
-                <span class="comic">
-                    <img src="assets/image/CMC004.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
-                <span class="comic">
-                    <img src="assets/image/CMC001.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
-                <span class="comic">
-                    <img src="assets/image/CMC002.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
+            <span class="list-comics" id="listPreviewComics">
+                
             </span>
         </div>
 
@@ -119,18 +97,11 @@
                 <h1>Category</h1>
                 <a href="">See All ></a>
             </span>
-            <span class="container-category">
-                <div>
-                    <h1 class="on-click">Romance</h1>
-                    <h1>Fantasy</h1>
-                    <h1>Chinese Classic</h1>
-                    <h1>Harem</h1>
-                    <h1>CEO</h1>
-                    <h1>Action</h1>
-                    <h1>Showbiz</h1>
-                    <h1>Counterattack</h1>
+            <span class="container-category" id="containerCategory">
+                <div id="listCategory">
+                
                 </div>
-                <span class="list-comics">
+                <span class="list-comics" id="listComicCategory">
                     <span class="comic">
                         <img src="assets/image/CMC001.jpg" alt="">
                         <h1>Marry One Get One Free</h1>
@@ -161,7 +132,34 @@
     </main>
 
     <script>
-   
+        listPreviewComics = $('#listPreviewComics');
+        for(let i = 0; i < 6; i++){
+            listPreviewComics.append(`<span class="comic" onclick="changePreview(${i})" > <img src=${comic[i].image} ><h1>${comic[i].headerComic}</h1> </span>`);
+        }
+
+        changePreview =(index)=>{
+            $('.image-preview').attr('src', comic[index].image);
+            $('.header-preview').html(comic[index].headerComic);
+            $('.category-preview').html(comic[index].category);
+            $('.preview-desc').html(comic[index].desc);
+            $('.preview-view').html(comic[index].seeing);
+            $('.preview-like').html(comic[index].like);
+        }
+        changePreview(0);
+
+        listCategory = $("#listCategory");
+        category.map((data, index)=>{
+            listCategory.append(`<h1 onclick="changeOnclickClass(${index})" >${data.genreName}</h1>`);
+        });     
+
+        currentIndexOnclick = 0
+        changeOnclickClass =(index)=>{
+            listCategory.children().eq(currentIndexOnclick).removeClass("on-click");
+            listCategory.children().eq(index).addClass("on-click");
+            currentIndexOnclick = index;
+        }
+
+        changeOnclickClass(0)
     </script>
     <br><br><br>
 </body>

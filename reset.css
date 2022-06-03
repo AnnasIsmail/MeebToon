@@ -7,3 +7,11 @@
     font: inherit;
     font-family: 'roboto';
 }
+
+body{
+    background-image: url('background.svg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
