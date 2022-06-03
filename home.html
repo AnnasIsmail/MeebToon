@@ -152,12 +152,7 @@
             listCategory.append(`<h1 onclick="changeOnclickClass(${index})" >${data.genreName}</h1>`);
         });     
 
-        currentIndexOnclick = 0
-        changeOnclickClass =(index)=>{
-            listCategory.children().eq(currentIndexOnclick).removeClass("on-click");
-            listCategory.children().eq(index).addClass("on-click");
-            currentIndexOnclick = index;
-        }
+
 
         changeOnclickClass(0)
     </script>
