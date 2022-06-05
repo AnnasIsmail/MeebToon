@@ -27,9 +27,9 @@
                 <div class="drop-down">
                     <span onclick="loadTopMebtoon(1)" >Romance</span>
                     <span onclick="loadTopMebtoon(2)">Fantasy</span>
-                    <span onclick="loadTopMebtoon(3)">Chinese Classic</span>
-                    <span onclick="loadTopMebtoon(4)">Harem</span>
-                    <span onclick="loadTopMebtoon(5)">Action</span>
+                    <span onclick="loadTopMebtoon(3)">Harem</span>
+                    <span onclick="loadTopMebtoon(4)">Action</span>
+                    <span onclick="loadTopMebtoon(5)">Showbiz</span>
                     <span class="navbar-category-show-all">Show All</span>
             </div>
         </div>
@@ -60,8 +60,8 @@
                     </span>
                     <p class="desc preview-desc"></p>
                     <span class="parent-button">
-                        <button>Subscribe</button>
-                        <button>Detail Comic</button>
+                        <button >Subscribe</button>
+                        <button onclick="loadDetailMebtoon('CMC001')">Detail Comic</button>
                         <button>Share</button>
                     </span>
                     <span class="parent-comment">
@@ -102,30 +102,7 @@
                 
                 </div>
                 <span class="list-comics" id="listComicCategory">
-                    <span class="comic">
-                        <img src="assets/image/CMC001.jpg" alt="">
-                        <h1>Marry One Get One Free</h1>
-                    </span>
-                    <span class="comic">
-                        <img src="assets/image/CMC002.jpg" alt="">
-                        <h1>Marry One Get One Free</h1>
-                    </span>
-                    <span class="comic">
-                        <img src="assets/image/CMC003.jpg" alt="">
-                        <h1>Marry One Get One Free</h1>
-                    </span>
-                    <span class="comic">
-                        <img src="assets/image/CMC004.jpg" alt="">
-                        <h1>Marry One Get One Free</h1>
-                    </span>
-                    <span class="comic">
-                        <img src="assets/image/CMC001.jpg" alt="">
-                        <h1>Marry One Get One Free</h1>
-                    </span>
-                    <span class="comic">
-                        <img src="assets/image/CMC002.jpg" alt="">
-                        <h1>Marry One Get One Free</h1>
-                    </span>
+                    
                 </span>
             </span>
         </div>
@@ -152,14 +129,37 @@
             listCategory.append(`<h1 onclick="changeOnclickClass(${index})" >${data.genreName}</h1>`);
         });     
 
+
+        listComicCategory = $("#listComicCategory");
+        contentListCategory =()=>{
+            listComicCategory.empty();
+            getCurrentCategory = category[currentIndexOnclick].genreName;
+            let result = [];
+            comic.map((data , index)=>{
+                if(data.category.indexOf(getCurrentCategory) !== -1){
+                    result.push(data);
+                }
+            })
+            result.map((data , index)=>{
+                if(index < 6){
+                    listComicCategory.append(`<span class="comic"> <img src=${data.image} ><h1>${data.headerComic}</h1> </span>`);
+                }
+            })
+        }
+
+
         currentIndexOnclick = 0
         changeOnclickClass =(index)=>{
             listCategory.children().eq(currentIndexOnclick).removeClass("on-click");
             listCategory.children().eq(index).addClass("on-click");
             currentIndexOnclick = index;
+            contentListCategory();
         }
 
-        changeOnclickClass(0)
+        changeOnclickClass(0);
+
+       
+
     </script>
     <br><br><br>
 </body>

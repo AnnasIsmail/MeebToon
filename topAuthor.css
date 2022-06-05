@@ -40,6 +40,12 @@ main div{
     padding-top: 20px;
 }
 
+.bio-author .image-profile-author{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
 .bio-author img:nth-child(1) {
     width: none;
     height: 100%;
@@ -110,6 +116,14 @@ main div .list-comic div .comic{
     font-weight: bold;
     text-align: left;
     margin-top: 5px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    white-space: wrap;
+    word-break: break-all;
+    font-weight: 450;
+    overflow: hidden;
 }
 
 span .like{

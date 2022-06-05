@@ -167,7 +167,7 @@ comic = [
         like : 295000,
         authorId : 'AUT003',
         desc : `Haunted house detective Kate lives in a strange city. The laughing robots in the research institute, the strange shadows flash in the attic, and the black hole in the street corner... People are driven crazy by these strange things. Only the detective Kate enjoy the fun of adventure! MangaToon got authorization from Kuaikan Comics to publish this manga, the content is the author's own point of view, and does not represent the stand of MangaToon.`,
-        image : 'assets/image/CMC014'
+        image : 'assets/image/CMC014.jpg'
     },
     {
         comicId : 'CMC015',
@@ -175,9 +175,9 @@ comic = [
         category : '',
         seeing : 11500000,
         like : 295000,
-        authorId : '',
+        authorId : 'AUT008',
         desc : `Coming from the mysterious space, the Grey and Crimson creatures collide on earth. They are managing to transform as much humans as they can into their own kinds. Xiao Cheng and Zheng Yiren, best friends from childhood, were transformed into Red and Grey respectively. Standing on the opposite points, facing this collapsing world, what choices will the two brothers make? MangaToon got authorization from Red Cyan Anime to publish this manga, the content is the author's own point of view, and does not represent the stand of MangaToon.`,
-        image : 'assets/image/CMC015'
+        image : 'assets/image/CMC015.jpg'
     },
     {
         comicId : 'CMC016',
@@ -226,7 +226,7 @@ comic = [
         like : 295000,
         authorId : 'AUT005',
         desc : `The previous master of the Supreme Sect passed on his power to Ives before he ascended and became immortal. In order to rectify the Sect and rise up the top one as they were, Ives secretly changed his identify to be the son of the House Windsor, a powerful royal family of Shang dynasty… MangaToon got authorization from TaXue Comic to publish this manga, the content is the author's own point of view, and does not represent the stand of MangaToon.`,
-        image : 'assets/image/CMC020'
+        image : 'assets/image/CMC020.jpg'
     },
 ]
 
@@ -235,7 +235,7 @@ author = [
         authorId : 'AUT001', 
         authorName : 'Dream studio',
         from: 'Jakarta, Indonesia',
-        image: 'assets/image/AUT001'
+        image: 'assets/image/AUT001.png'
     },
     {
         authorId : 'AUT002', 
@@ -259,7 +259,7 @@ author = [
         authorId : 'AUT005', 
         authorName : 'TaXue Comic',
         from: '',
-        image: 'assets/image/'
+        image: 'assets/image/AUT005.jpg'
     },
     {
         authorId : 'AUT006', 
@@ -284,12 +284,6 @@ author = [
         authorName : 'SaManHua',
         from: '',
         image: 'assets/image/AUT009.webp'
-    },
-    {
-        authorId : 'AUT00', 
-        authorName : '',
-        from: '',
-        image: 'assets/image/'
     },
 ]
 

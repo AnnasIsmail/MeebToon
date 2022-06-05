@@ -28,9 +28,9 @@
                 <div class="drop-down">
                     <span onclick="loadTopMebtoon(1)" >Romance</span>
                     <span onclick="loadTopMebtoon(2)">Fantasy</span>
-                    <span onclick="loadTopMebtoon(3)">Chinese Classic</span>
-                    <span onclick="loadTopMebtoon(4)">Harem</span>
-                    <span onclick="loadTopMebtoon(5)">Action</span>
+                    <span onclick="loadTopMebtoon(3)">Harem</span>
+                    <span onclick="loadTopMebtoon(4)">Action</span>
+                    <span onclick="loadTopMebtoon(5)">Showbiz</span>
                     <span class="navbar-category-show-all">Show All</span>
             </div>
         </div>
@@ -38,89 +38,97 @@
     <div class="ganjelan"></div>
 
     <main>
-        <div class="category-comic" id="categoryComic">
-            <span>
+        <div class="category-comic" >
+            <span id="categoryComic">
                 <h1 onclick="changeCategory(0)">All</h1>
-                <h1 onclick="changeCategory(1)">Romance</h1>
-                <h1 onclick="changeCategory(2)">Fantasy</h1>
-                <h1 onclick="changeCategory(3)">Chinese Classic</h1>
-                <h1 onclick="changeCategory(4)">Harem</h1>
-                <h1 onclick="changeCategory(5)">Action</h1>
-                <h1 onclick="changeCategory(6)">Showbiz</h1>
-                <h1 onclick="changeCategory(7)">CEO</h1>
-                <h1 onclick="changeCategory(8)">Counterattack</h1>
+                
             </span>
         </div>
-        <div class="list-comics">
-            <span class="comic">
+        <div class="list-comics" id="containerComic">
+            <!-- <span class="comic">
                 <img src="assets/image/CMC001.jpg" alt="">
                 <h1>Marry One Get One Free</h1>
                 <span class="like"><img src="assets/image/favorite.svg" alt="">110.5k</span>
-            </span>
-            <span class="comic">
-                <img src="assets/image/CMC002.jpg" alt="">
-                <h1>Marry One Get One Free</h1>
-                <span class="like"><img src="assets/image/favorite.svg" alt="">110.5k</span>
-            </span>
-            <span class="comic">
-                <img src="assets/image/CMC003.jpg" alt="">
-                <h1>Marry One Get One Free</h1>
-                <span class="like"><img src="assets/image/favorite.svg" alt="">110.5k</span>
-            </span>
-            <span class="comic">
-                <img src="assets/image/CMC004.jpg" alt="">
-                <h1>Marry One Get One Free</h1>
-                <span class="like"><img src="assets/image/favorite.svg" alt="">110.5k</span>
-            </span>
-            <span class="comic">
-                <img src="assets/image/CMC001.jpg" alt="">
-                <h1>Marry One Get One Free</h1>
-                <span class="like"><img src="assets/image/favorite.svg" alt="">110.5k</span>
-            </span>
+            </span> -->
+            
         </div>
         <div class="recomended-for-you">
             <h1 class="header">Recomended For You</h1>
-            <div class="list-comics">
-                <span class="comic">
+            <div class="list-comics"  id="recomendedForYou">
+                <!-- <span class="comic">
                     <img src="assets/image/CMC001.jpg" alt="">
                     <h1>Marry One Get One Free</h1>
-                </span>
-                <span class="comic">
-                    <img src="assets/image/CMC002.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
-                <span class="comic">
-                    <img src="assets/image/CMC003.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
-                <span class="comic">
-                    <img src="assets/image/CMC004.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
-                <span class="comic">
-                    <img src="assets/image/CMC001.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
-                <span class="comic">
-                    <img src="assets/image/CMC002.jpg" alt="">
-                    <h1>Marry One Get One Free</h1>
-                </span>
+                </span> -->
+               
             </div>
         </div>
     </main>
 
     <script>
+        categoryComic = $("#categoryComic");
+
+        category.map((data, index)=>{
+            categoryComic.append(`<h1 onclick="changeCategory(${index+1})" >${data.genreName}</h1>`);
+        });   
+
         if(typeof currentCategory === 'undefined'){
             currentCategory = 0;
         }
 
-        $("#categoryComic").children().children().eq(currentCategory).addClass('on-click');
 
-        changeCategory =(index)=>{
-            $("#categoryComic").children().children().eq(currentCategory).removeClass('on-click');
-            $("#categoryComic").children().children().eq(index).addClass('on-click');
-            currentCategory = index;
+        containerComic = $("#containerComic");
+
+        loadComic =(data , index)=>{
+            containerComic.append(`
+                <span class="comic">
+                    <img src="${data.image}" alt="">
+                    <h1>${data.headerComic}</h1>
+                    <span class="like"><img src="assets/image/favorite.svg" alt="">110.5k</span>
+                </span>
+            `);
         }
+
+        filterData =()=>{
+            if(currentCategory === 0){
+                comic.map((data , index)=>{
+                    loadComic(data , index)
+                })
+            }else{
+                getNameCategory = categoryComic.children().eq(currentCategory).text();
+                comic.map((data , index)=>{
+                    if(data.category.indexOf(getNameCategory) !== -1){
+                        loadComic(data , index)
+                    }
+                })
+            }
+        }
+        
+        changeCategory =(index)=>{
+            containerComic.empty()
+            categoryComic.children().eq(currentCategory).removeClass('on-click');
+            categoryComic.children().eq(index).addClass('on-click');
+            currentCategory = index;
+            filterData()
+        }
+
+        categoryComic.children().eq(currentCategory).addClass('on-click');
+        changeCategory(currentCategory);
+
+
+        // RECOMENDED FOR YOU
+
+        recomendedForYou = $("#recomendedForYou");
+        comic.map((data , index)=>{
+            if(index < 6){
+                recomendedForYou.append(`
+                <span class="comic">
+                        <img src=${data.image} alt="">
+                        <h1>${data.headerComic}</h1>
+                    </span>
+                `);
+            }
+        });
+
     </script>
 </body>
 </html>

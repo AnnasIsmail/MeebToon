@@ -61,7 +61,14 @@ $(document).ready(function(){
     })
 
     loadTopMebtoon =(index)=>{
+        window.location.name = "topMebtoon"
         $('#root').load('topMebtoon.html');
         currentCategory = index;
+    }
+
+    loadDetailMebtoon =(id)=>{
+        window.location.name = "detail-mebToon"
+        window.location.id = id
+        $('#root').load('detailMebtoon.html');
     }
 });

@@ -1,8 +1,13 @@
 main{
+    background: rgba( 224, 192, 188, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+
     width: 70%;
     margin: auto;
     margin-top: 20px;
-    background-color: #E0C0BC;
     border-radius: 10px;
 }
 
@@ -23,9 +28,16 @@ main{
     color: #4C1510;
 }
 
+
 .detail-comic img{
     width: 100%;
     border-radius: 5px;
+    
+}
+
+.detail-comic .image-preview{
+    width: 100%;
+    min-width: 350px;
 }
 
 .detail-comic .desc-comic h1{
@@ -37,6 +49,7 @@ main{
     display: grid;
     grid-template-columns: auto auto;
     padding: 10px;
+    font-weight: 500;
 }
 
 .detail-comic .view , .detail-comic .like{
@@ -174,9 +187,11 @@ main{
 
 .list-comics{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
+    justify-content: space-between;
     padding-top: 15px;
+    height: 300px;
+    overflow: hidden;
 }
 
 .list-comics .comic{
@@ -203,4 +218,21 @@ main{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap; 
+}
+
+@media only screen and (max-width: 1150px) {
+    main{
+        width: 90%;
+    }
+
+    .detail-comic .image-preview{
+        width: 100%;
+        min-width: 250px;
+    }
+}
+
+@media only screen and (max-width: 810px) {
+    .detail-comic{
+        grid-template-columns: 1fr;
+    }
 }

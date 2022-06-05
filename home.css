@@ -258,8 +258,9 @@ border-radius: 10px;
 .hottest-comics .list-comics{
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-content: space-evenly;
+    grid-template-columns: minmax(200px , 1fr) minmax(200px , 1fr) minmax(200px , 1fr) minmax(200px , 1fr) minmax(200px , 1fr) minmax(200px , 1fr);
+    /* justify-content: space-evenly; */
+    overflow: auto;
     padding-top: 15px;
 }
 
@@ -300,6 +301,7 @@ border-radius: 10px;
     margin-top: 20px;
     display: grid;
     overflow: hidden;
+    height: 440px;
 }
 
 .category .container-category div{
@@ -337,9 +339,12 @@ border-radius: 10px;
 .category .list-comics{
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-content: space-evenly;
+    grid-template-columns: minmax(200px , 1fr) minmax(200px , 1fr) minmax(200px , 1fr) minmax(200px , 1fr) minmax(200px , 1fr) minmax(200px , 1fr);
+    grid-template-rows: 1fr;
+    overflow: auto;
+    /* justify-content: space-evenly; */
     padding-top: 15px;
+    width: auto;
 }
 
 .category .list-comics .comic{

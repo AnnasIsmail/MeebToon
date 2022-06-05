@@ -26,44 +26,29 @@
                 <div class="drop-down">
                     <span onclick="loadTopMebtoon(1)" >Romance</span>
                     <span onclick="loadTopMebtoon(2)">Fantasy</span>
-                    <span onclick="loadTopMebtoon(3)">Chinese Classic</span>
-                    <span onclick="loadTopMebtoon(4)">Harem</span>
-                    <span onclick="loadTopMebtoon(5)">Action</span>
+                    <span onclick="loadTopMebtoon(3)">Harem</span>
+                    <span onclick="loadTopMebtoon(4)">Action</span>
+                    <span onclick="loadTopMebtoon(5)">Showbiz</span>
                     <span class="navbar-category-show-all">Show All</span>
             </div>
         </div>
     </nav>
     <div class="ganjelan"></div>
 
-    <main>
-        <div>
-            <h1>Romance</h1>
-            <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ratione nihil accusamus minima animi esse minus id eaque, repellat, modi aperiam harum voluptatem possimus doloremque cum dolorem, ipsam impedit. Neque?</h5>
-        </div>
-        <div>
-            <h1>Fantasy</h1>
-            <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ratione nihil accusamus minima animi esse minus id eaque, repellat, modi aperiam harum voluptatem possimus doloremque cum dolorem, ipsam impedit. Neque?</h5>
-        </div>
-        <div>
-            <h1>Harem</h1>
-            <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ratione nihil accusamus minima animi esse minus id eaque, repellat, modi aperiam harum voluptatem possimus doloremque cum dolorem, ipsam impedit. Neque?</h5>
-        </div>
-        <div>
-            <h1>Action</h1>
-            <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ratione nihil accusamus minima animi esse minus id eaque, repellat, modi aperiam harum voluptatem possimus doloremque cum dolorem, ipsam impedit. Neque?</h5>
-        </div>
-        <div>
-            <h1>CEO</h1>
-            <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ratione nihil accusamus minima animi esse minus id eaque, repellat, modi aperiam harum voluptatem possimus doloremque cum dolorem, ipsam impedit. Neque?</h5>
-        </div>
-        <div>
-            <h1>Showbiz</h1>
-            <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ratione nihil accusamus minima animi esse minus id eaque, repellat, modi aperiam harum voluptatem possimus doloremque cum dolorem, ipsam impedit. Neque?</h5>
-        </div>
-        <div>
-            <h1>Counterattack</h1>
-            <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ratione nihil accusamus minima animi esse minus id eaque, repellat, modi aperiam harum voluptatem possimus doloremque cum dolorem, ipsam impedit. Neque?</h5>
-        </div>
+    <main id="main">
+        
     </main>
+
+    <script>
+        main = $("#main");
+        category.map((data , index)=>{
+            main.append(`
+            <div>
+                <h1>${data.genreName}</h1>
+                <h5>${data.genreDesc}</h5>
+            </div>
+            `);
+        })
+    </script>
 </body>
 </html>
