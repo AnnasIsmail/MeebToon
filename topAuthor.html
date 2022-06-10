@@ -89,7 +89,7 @@
                 if(data.authorId === author[index].authorId){
                     $(`#listComic${author[index].authorId}`).append(`
                     <div>
-                        <span class="comic">
+                        <span class="comic" onclick="loadDetailMebtoon('${data.comicId}')">
                             <img src=${data.image} alt="">
                             <h1>${data.headerComic}</h1>
                             <span class="like"><img src="assets/image/favorite.svg" alt="">110.5k</span>

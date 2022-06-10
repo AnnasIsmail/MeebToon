@@ -43,7 +43,7 @@
         main = $("#main");
         category.map((data , index)=>{
             main.append(`
-            <div>
+            <div onclick="loadTopMebtoon(${index+1})">
                 <h1>${data.genreName}</h1>
                 <h5>${data.genreDesc}</h5>
             </div>

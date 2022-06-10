@@ -60,9 +60,9 @@
                     </span>
                     <p class="desc preview-desc"></p>
                     <span class="parent-button">
-                        <button >Subscribe</button>
-                        <button onclick="loadDetailMebtoon('CMC001')">Detail Comic</button>
-                        <button>Share</button>
+                        <button class="navbar-subscribe">Subscribe</button>
+                        <button class="go-detail-comic">Detail Comic</button>
+                        <button >Share</button>
                     </span>
                     <span class="parent-comment">
                         <h1 class="header-comment">Commencts (10)</h1>
@@ -121,6 +121,7 @@
             $('.preview-desc').html(comic[index].desc);
             $('.preview-view').html(comic[index].seeing);
             $('.preview-like').html(comic[index].like);
+            $('.go-detail-comic').attr( 'onclick' , `loadDetailMebtoon('${comic[index].comicId}')`);
         }
         changePreview(0);
 
@@ -142,10 +143,11 @@
             })
             result.map((data , index)=>{
                 if(index < 6){
-                    listComicCategory.append(`<span class="comic"> <img src=${data.image} ><h1>${data.headerComic}</h1> </span>`);
+                    listComicCategory.append(`<span class="comic" onclick="loadDetailMebtoon('${data.comicId}')"> <img src=${data.image} ><h1>${data.headerComic}</h1> </span>`);
                 }
             })
         }
+        
 
 
         currentIndexOnclick = 0
